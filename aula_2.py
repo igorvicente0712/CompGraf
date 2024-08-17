@@ -25,6 +25,11 @@ def rotate_around_center_of_mass(obj, event):
         renderWindow.Render()
     if key == "k":
         posn = actor_cube.GetPosition()    # aqui você captura a tecla que foi pressionada
+    if key == "h":
+        posn = actor_cube.GetPosition()                                              # captura a posição do cubo
+        actor_cube.AddPosition(posn[0],posn[1],posn[2])               #trás de volta da origem (T)
+        actor_cube.RotateZ(5)                                                                 # rotaciona no sentido anti-horário (R)
+        actor_cube.AddPosition(-posn[0],-posn[1],-posn[2])             # leva para a origem (T’)
     renderWindow.Render()
 
 # Definir o raio da esfera[]
